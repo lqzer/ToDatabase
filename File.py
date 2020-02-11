@@ -43,6 +43,9 @@ def getNameFromPath(filePath):
 def getPath(filePath):
     return filePath[:filePath.rfind('\\')+1]
 
+def getFileSuffix(filePath):
+    return filePath[filePath.rfind('.'):]
+
 def copyFile(src,dst):
     """
     实现文件从src复制到dst
@@ -61,3 +64,4 @@ if __name__=='__main__':
     print(getFileNameFromPath("\\data\\log\\233.gif"))
     print(getPath("\\data\\log\\233.gif"))
     print(getNameFromPath("\\data\\log\\233.gif"))
+    print(getFileSuffix("\\data\\log\\233.gif"))

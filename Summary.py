@@ -33,7 +33,7 @@ if __name__=='__main__':
     
     #往excel里写文件
     print("有%d用户匹配成功",len(findUsers))
-    findExcel=WriteExcel("C:\\Users\\HYlqz\\Desktop\\云浮数据\\照片\\all\\findExcel.xls")
+    findExcel=WriteExcel("C:\\Users\\HYlqz\\Desktop\\云浮数据\\照片\\all\\findExcel.xls",["工号","姓名","部门","电话"])
     findExcel.writeUsersToExcel(findUsers)
     findExcel.save()
 
@@ -41,7 +41,7 @@ if __name__=='__main__':
         users.remove(user)
     #保存未找到的用户
     print("还剩%d用户未匹配成功",len(users))
-    findExcel=WriteExcel("C:\\Users\\HYlqz\\Desktop\\云浮数据\\照片\\all\\unfindExcel.xls")
+    findExcel=WriteExcel("C:\\Users\\HYlqz\\Desktop\\云浮数据\\照片\\all\\unfindExcel.xls",["工号","姓名","部门","电话"])
     findExcel.writeUsersToExcel(users)
     findExcel.save()
 
