@@ -18,7 +18,12 @@ def convImage(infile,outfile,format):
     im=Image.open(infile)
     im.convert('RGB')
     im.save(outfile,format)
-    
+
+def compress(inFile,dstFile,scale=2):
+    sImg = Image.open(inFile)
+    w,h=sImg.size
+    dImg=sImg.resize((int(w/scale),int(h/scale)),Image.ANTIALIAS)
+    dImg.save(dstFile)
 
 def imageFile2Base64(infile):
     if infile.endswith('png'):
@@ -34,7 +39,9 @@ def imageFile2Base64(infile):
 if __name__== '__main__':
     #convImage("包晓静.gif","foo.png","png")
     
-    basestr = imageFile2Base64("foo.jpg") 
-    print(basestr)
+    #basestr = imageFile2Base64("foo.jpg") 
+    #print(basestr)
+
+    compress("350.jpg","2244.jpg")
    
        

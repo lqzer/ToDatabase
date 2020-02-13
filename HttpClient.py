@@ -13,14 +13,23 @@ def httpGet(url):
    return response
 
 if __name__=='__main__':
-   url="http://www.baidu.com"
-   response=httpGet('http://localhost:8888/hello')
-   print(response.content.decode('ascii'))
-   dict={}
-   dict['name']="tom"
-   dict['age']=12
-   response=httpPost('http://localhost:8888/adduser',dict)
-   print(response.content.decode('ascii'))
+   # url="http://www.baidu.com"
+   # response=httpGet('http://localhost:8888/hello')
+   # print(response.content.decode('ascii'))
+   # dict={}
+   # dict['name']="tom"
+   # dict['age']=12
+   # response=httpPost('http://localhost:8888/adduser',dict)
+   # print(response.content.decode('ascii'))
+
+   dict2 = {}
+   dict2['name']="张三"
+   dict2['country']="中国"
+   response = httpPost('http://localhost:8888/getMessage',dict2)
+   content = response.content.decode('ascii')
+   jsonObjcet = json.loads(content)
+   print(jsonObjcet['country'])
+   print(jsonObjcet['name'])
    
 
 
